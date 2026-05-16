@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'SI-LAPAS') }}</title>
+<title>{{ config('app.name', 'SI-ASAE') }}</title>
     
     <!-- Bootstrap CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -68,7 +68,7 @@
     <div class="login-card">
         <div class="login-header">
             <i class="bi bi-building"></i>
-            <h3 class="mb-1">SI-LAPAS</h3>
+<h3 class="mb-1">SI-ASAE</h3>
             <p class="mb-0 opacity-75">Sistem Informasi Asimilasi dan Edukasi</p>
         </div>
         

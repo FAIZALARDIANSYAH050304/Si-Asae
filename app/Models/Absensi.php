@@ -29,9 +29,9 @@ class Absensi extends Model
         return $this->belongsTo(WargaBinaan::class);
     }
 
-    public function kegiatan(): BelongsTo
+    public function kegiatans(): BelongsTo
     {
-        return $this->belongsTo(Kegiatans::class);
+        return $this->belongsTo(Kegiatans::class, 'kegiatans_id');
     }
 
     public function petugas(): BelongsTo

@@ -4,7 +4,7 @@
             <!-- Left Side -->
             <div class="flex items-center">
                 <h2 class="text-lg font-semibold text-gray-900">
-                    @yield('title', 'SI-LAPAS - Sistem Informasi Asimilasi dan Edukasi')
+@yield('title', 'SI-ASAE - Sistem Informasi Asimilasi dan Edukasi')
                 </h2>
             </div>
 

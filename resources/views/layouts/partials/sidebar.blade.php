@@ -4,7 +4,7 @@
         <div class="flex items-center mb-5">
             <a href="{{ route('dashboard') }}" class="flex items-center">
                 <i class="bi bi-building text-2xl text-blue-600 me-2"></i>
-                <span class="self-center text-xl font-semibold whitespace-nowrap text-gray-900">SI-LAPAS</span>
+<span class="self-center text-xl font-semibold whitespace-nowrap text-gray-900">SI-ASAE</span>
             </a>
         </div>
 

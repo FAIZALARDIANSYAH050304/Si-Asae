@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'SI-LAPAS') }}</title>
+<title>{{ config('app.name', 'SI-ASAE') }}</title>
     
     <!-- Bootstrap CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -83,7 +83,7 @@
             <div class="sidebar-logo">
                 <a href="{{ route('dashboard') }}" class="d-flex align-items-center text-decoration-none">
                     <i class="bi bi-building text-primary fs-4 me-2"></i>
-                    <span class="fw-bold text-dark fs-5">SI-LAPAS</span>
+<span class="fw-bold text-dark fs-5">SI-ASAE</span>
                 </a>
             </div>
             
@@ -140,7 +140,7 @@
             <!-- Topbar -->
             <header class="topbar d-flex justify-content-between align-items-center">
                 <div>
-                    <h4 class="mb-0 fw-semibold">@yield('title', 'SI-LAPAS')</h4>
+<h4 class="mb-0 fw-semibold">@yield('title', 'SI-ASAE')</h4>
                 </div>
                 <div class="d-flex align-items-center">
 <span class="me-3 text-muted">{{ auth()->user()->name ?? 'User' }}</span>

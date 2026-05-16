@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Laporan Kegiatan Harian - SI-LAPAS</title>
+<title>Laporan Kegiatan Harian - SI-ASAE</title>
     <style>
         body { font-family: Arial, sans-serif; font-size: 12px; }
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
@@ -15,7 +15,7 @@
 <body>
     <div class="header">
         <h1>Laporan Kegiatan Harian</h1>
-        <h2>SI-LAPAS</h2>
+<h2>SI-ASAE</h2>
     </div>
     <div class="info">
         <p><strong>Tanggal:</strong> {{ \Carbon\Carbon::parse($tanggal)->format('d/m/Y') }}</p>
