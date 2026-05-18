@@ -6,18 +6,24 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class Kegiatans extends Model
 {
-    use HasFactory;
+    use HasFactory, LogsActivity;
+
+    protected $table = 'kegiatans';
 
     protected $fillable = [
         'warga_binaan_id',
-        'program_asimilasi_id',
-        'tanggal',
-        'jenis_kegatan',
-        'deskripsi',
         'petugas_id',
+        'nama_kegiatans',
+        'jenis_kegatan',
+        'tanggal',
+        'jam_mulai',
+        'jam_selesai',
+        'lokasi',
+        'keterangan',
     ];
 
     protected $casts = [
@@ -31,7 +37,7 @@ class Kegiatans extends Model
 
     public function programAsimilasi(): BelongsTo
     {
-        return $this->belongsTo(ProgramAsimilasi::class);
+        return $this->belongsTo(ProgramAsimilasi::class, 'program_asimilasi_id');
     }
 
     public function petugas(): BelongsTo
@@ -39,13 +45,15 @@ class Kegiatans extends Model
         return $this->belongsTo(User::class, 'petugas_id');
     }
 
-    public function absensis(): HasMany
-    {
-        return $this->hasMany(Absensi::class);
-    }
-
     public function dokumentasiKegiatans(): HasMany
     {
-        return $this->hasMany(DokumentasiKegiatans::class, 'kegiatans_id');
+        return $this->hasMany(DokumentasiKegiatans::class);
+    }
+
+    public function getActivitylogOptions(): \Spatie\Activitylog\LogOptions
+    {
+        return \Spatie\Activitylog\LogOptions::defaults()
+            ->logFillable()
+            ->logOnlyDirty();
     }
 }

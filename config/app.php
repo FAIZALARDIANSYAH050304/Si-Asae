@@ -123,8 +123,29 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
-    'aliases' => [
+'aliases' => [
         'QrCode' => App\Facades\QrCode::class,
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Login Page Logo Configuration
+    |--------------------------------------------------------------------------
+    |
+    | This configuration allows you to customize the logo displayed on the
+    | login page. You can use either an icon class (Bootstrap Icons) or
+    | a custom image path.
+    |
+    | For icon: use 'icon' => 'bi bi-lightning-charge'
+    | For image: use 'image' => 'images/logo.png'
+    |
+    */
+
+    'login_logo' => [
+        'type' => 'icon', // 'icon' or 'image'
+        'icon' => 'bi bi-lightning-charge',
+        'image' => 'images/logo.png',
+        'alt' => 'Logo',
     ],
 
 ];

@@ -43,7 +43,7 @@
                                 @forelse($activities as $activity)
                                 <tr>
                                     <td>{{ \Carbon\Carbon::parse($activity->created_at)->format('d/m/Y H:i') }}</td>
-                                    <td>{{ $activity->causer->name ?? '-' }}</td>
+<td>{{ optional($activity->causer)->name ?? '-' }}</td>
                                     <td><span class="badge bg-info">{{ $activity->log_name }}</span></td>
                                     <td>{{ $activity->description }}</td>
                                 </tr>

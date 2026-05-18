@@ -58,11 +58,22 @@
                     <!-- Form Section -->
                     <form method="POST" action="{{ route('absensi.process-scan') }}">
                         @csrf
-                        <div class="row">
-                            <div class="col-md-8">
+<div class="row">
+                            <div class="col-md-5">
                                 <div class="mb-3">
                                     <label for="uuid" class="form-label">UUID Warga Binaan</label>
                                     <input type="text" class="form-control form-control-lg" id="uuid" name="uuid" placeholder="Scan QR Code atau ketik UUID..." required autofocus>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label for="status" class="form-label">Status Kehadiran</label>
+                                    <select name="status" id="status" class="form-select form-select-lg" required>
+                                        <option value="semua">Semua Status</option>
+                                        <option value="hadir" selected>Hadir</option>
+                                        <option value="izin">Izin</option>
+                                        <option value="alpha">Alpha</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-4">

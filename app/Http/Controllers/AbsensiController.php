@@ -56,10 +56,20 @@ class AbsensiController extends Controller
         return view('absensi.scan');
     }
 
-    public function processScan(Request $request)
+public function processScan(Request $request)
     {
         $uuid = $request->get('uuid');
         $tanggal = $request->get('tanggal') ?? date('Y-m-d');
+        $status = $request->get('status', 'semua');
+        
+        // Map status values
+        $statusMap = [
+            'semua' => 'Hadir',
+            'hadir' => 'Hadir',
+            'izin' => 'Izin',
+            'alpha' => 'Alpha'
+        ];
+        $statusKehadiran = $statusMap[$status] ?? 'Hadir';
         
         $wargaBinaan = WargaBinaan::where('uuid', $uuid)->first();
         
@@ -81,7 +91,7 @@ class AbsensiController extends Controller
             'warga_binaan_id' => $wargaBinaan->id,
             'tanggal' => $tanggal,
             'jam_masuk' => now()->format('H:i:s'),
-            'status_kehadiran' => 'Hadir',
+            'status_kehadiran' => $statusKehadiran,
             'petugas_id' => Auth::id(),
         ]);
 
